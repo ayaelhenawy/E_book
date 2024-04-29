@@ -396,7 +396,7 @@ body.dark-theme {
     box-shadow: 0 4px 32px hsla(230, 72%, 32%,.4);
 }
 
-/*=============== SERVICES ===============*/
+/* =============== SERVICES ===============*/
 .service__container{
   row-gap: 3rem;
 }
@@ -413,7 +413,7 @@ body.dark-theme {
 .service__title{
   font-size: var(--h3-font-size);
   margin-bottom: .5rem;
-} 
+}  
 
 /*=============== Home ===============*/
 .home__swiper {
@@ -444,11 +444,12 @@ body.dark-theme {
 .home__article{
     scale: .8;
 }
-/* Swiper
+/* Swiper */
+
 .swiper-slide-active,
 .swiper-slide-duplicate-activate{
   scale: 1;
-}v
+}
 
 /*=============== FEATURED ===============*/
 .featured__card{
@@ -459,8 +460,6 @@ body.dark-theme {
   overflow: hidden;
   border: 2px solid  var(--border-color);
   transition: border .4s , background-color .4s;
-
-
 }
 .featured__img{
   width: 150px;
@@ -504,7 +503,7 @@ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 font-style: bold;*/
 
 }
-.featured__actions{
+.featured__action{
   display: inline-flex;
   flex-direction: column;
   row-gap: .75rem;
@@ -513,15 +512,13 @@ font-style: bold;*/
   right: -1.5rem;
   transition: right .4s;
 }
-.featured__actions button{
+.featured__action button{
 background: none;
 font-size: 1.25rem;
 color:var(--first-color);
 cursor: pointer;
-/*border: none;*/
+} 
 
-
-}
 
 /*.section__title {
 text-align: center;
@@ -530,8 +527,8 @@ font-family:"Montagu Slab", serif;
 margin-bottom: 2rem;
 }*/
 
-.featured__card:hover .featured__actions{
-right: 2rem;
+.featured__card:hover .featured__action{
+right: 1.5rem;
 }
 /*.container {
 max-width: 1220px;
@@ -555,12 +552,12 @@ font-weight: 500;
 .swiper-button-next{
     width: initial;
     height: initial;
-    background-color: hsl(230, 100%, 97%);
-    border: 2px solid hsl(230, 50%, 90%);
+    background-color: var(--container-color);
+    border: 2px solid var(--border-color);
     padding: .5rem;
     font-size: 1.5rem;
-    color: hsl(230, 62%, 56%);
-    transition: border .4s background-color -4s;
+    color: var(--first-color);
+    transition: border .4s background-color .4s;
 }
 
 
@@ -653,7 +650,7 @@ font-weight: 500;
 }
 
 /*--==================== JOIN ====================-*/
-.join__container{
+.join{
   position: relative;
   padding-block: 3rem;
 }
@@ -681,16 +678,16 @@ font-weight: 500;
   row-gap: 1rem;
 }
 
-.join__input {
+ .join__input {
   padding: 1.25rem 1rem;
-  background-color: var(--bode-color);
+  background-color: var(--body-color);
   color: var(--title-color);
   transition: background-color .4s;
-}
+} 
 
 .join__input::placeholder {
   color: var(--text-color);
-}
+} 
 
 .join__button {
   padding-block: 1.25rem;
@@ -991,8 +988,7 @@ button:hover {
   .service__container{
     column-gap: 10rem;
   }
-
-  .service__card{
+  .service__card i {
     font-size: 3.5rem;
   }
 

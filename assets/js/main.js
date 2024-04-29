@@ -69,7 +69,7 @@ let swiperHome = new Swiper('.home__swiper', {
         disableOnInteraction: false,
     },
     breakpoints: {
-        1220: {
+      1220: {
           spaceBetween: -32,
         }
     }
@@ -85,13 +85,13 @@ let swiperHome = new Swiper('.home__swiper', {
     centeredSlides: 'auto',
 
     navigation:{
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
     },
     breakpoints: {
-        1150: {
-            slidesPerView: 4,
-            centeredSlides: false
+      1150: {
+         slidesPerView: 4,
+         centeredSlides: false
         }
     }
 });
@@ -169,7 +169,7 @@ const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'ri-moo
 
 if (selectedTheme) {
     document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
-    themeButton, classList.selectedIcon === 'ri-sun-line' ? 'add' : 'remove'(iconTheme)
+    themeButton.classList[selectedIcon === 'ri-moon-line' ? 'add' : 'remove'](iconTheme)
 }
 
 themeButton.addEventListener('click', () => {
@@ -179,7 +179,7 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 
-})
+ })
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
 
