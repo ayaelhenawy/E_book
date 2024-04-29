@@ -1,16 +1,16 @@
-/* search*/
+/*=============== SEARCH ===============*/
 const searchButton = document.getElementById('search-button'),
       searchClose = document.getElementById('search-close'),
       searchContent = document.getElementById('search-content')
 
-/* search show*/
+/*=============== Search Show ===============*/
 
 if(searchButton){
     searchButton.addEventListener('click',() =>{
         searchContent.classList.add('show-search')
     })
 }
-/*search hidden*/
+/*=============== Search Hidden ===============*/
 
 if(searchClose){
     searchClose.addEventListener('click', () =>{
@@ -19,20 +19,20 @@ if(searchClose){
     })
 }
 
-/*login*/
+/*=============== LOGIN ===============*/
 
 const loginButton = document.getElementById('login-button'),
       loginClose = document.getElementById('login-close'),
       loginContent = document.getElementById('login-content')
 
-/* login show*/
+/*=============== Login Show ===============*/
 
 if(loginButton){
     loginButton.addEventListener('click',() =>{
         loginContent.classList.add('show-login')
     })
 }
-/*login  hidden*/
+/*=============== Login  Hidden ===============*/
 
 if(loginClose){
     loginClose.addEventListener('click', () =>{
@@ -46,7 +46,7 @@ if(loginClose){
 
 
 
-/* add shadow header*/
+/*=============== ADD SHADOW HEADER ===============*/
 const shadowHeader = () =>{
   const header = document.getElementById('header')
 
@@ -56,6 +56,7 @@ const shadowHeader = () =>{
 }
 window.addEventListener('scroll', shadowHeader) 
 
+/*=============== HOME SWIPER = ==============*/
 let swiperHome = new Swiper('.home__swiper', {
     loop: true,
     spaceBetween: -24, 
@@ -74,8 +75,87 @@ let swiperHome = new Swiper('.home__swiper', {
     }
   
   })
-  
-  /*=============== DARK LIGHT THEME ===============*/
+
+  /*=============== FEATURED WSIPER = ==============*/
+  let swiperFeatured = new Swiper('.featured__swiper', {
+    loop: true,
+    spaceBetween: 16,
+    grabCursor: true,
+    slidesPerView: 'auto',
+    centeredSlides: 'auto',
+
+    navigation:{
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+        1150: {
+            slidesPerView: 4,
+            centeredSlides: false
+        }
+    }
+});
+
+/*=============== NEW SWIPER ===============*/
+let swiperNew = new Swiper('.new__swiper', {
+    loop: true,
+    spaceBetween: 16,
+    slidesPerView: 'auto',
+    breakpoints: {
+        1150: {
+            slidesPerView: 3,
+        }
+    }
+})
+
+/*=============== TESTIMONIAL SWIPER ===============*/
+let swiperTestimonial = new Swiper('.testimonial__swiper', {
+    loop: true,
+    spaceBetween: 16,
+    grabCursor: true,
+    slidesPerView: 'auto',
+    centeredSlides: 'auto',
+
+    breakpoints: {
+        1150: {
+            slidesPerView: 3,
+            centeredSlides: false,
+        }
+    }
+})
+
+/*=============== SHOW SCROLL UP ===============*/
+const scrollUp = ()=>{
+    const scrollUp = document.getElementById('scroll-up')
+    this.scrollY >= 350 ? scrollUp.classList.add('show-scroll')
+                 : scrollUp.classList.remove('show-scroll')
+}
+window.addEventListener('scroll', scrollUp)
+
+/*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
+const sections = document.querySelectorAll('section[id]')
+
+const scrollActive = () =>{
+    const scrollDown = window.scrollY
+
+  sections.forEach(current =>{
+    const sectionHeight = current.offsetHeight,
+         sectionTop = current.offsetTop - 58,
+         sectionId = current.getAttribute('id'),
+         sectionClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
+        
+    if(scrollDown > sectionTop && scrollDown <= sectionTop+ sectionHeight){
+        sectionClass.classList.add('active-link')
+    }
+    else{
+        sectionClass.classList.remove('active-link')
+    }
+
+  })
+}
+window.addEventListener('scroll',scrollActive)
+
+/*=============== DARK LIGHT THEME ===============*/
 
 const themeButton = document.getElementById('theme-button')
 const darkTheme = 'dark-theme'
@@ -101,32 +181,17 @@ themeButton.addEventListener('click', () => {
 
 })
 
-/*=============== NEW SWIPER ===============*/
-let swiperNew = new Swiper('.new__swiper', {
-    loop: true,
-    spaceBetween: 16,
-    slidesPerView: 'auto',
-    breakpoints: {
-        1150: {
-            slidesPerView: 3,
-        }
-    }
-})
+/*=============== SCROLL REVEAL ANIMATION ===============*/
 
+const sr = ScrollReveal({
+    origin: 'top',
+    distance: '60px',
+    duration: 2500,
+    delay: 400,
+});
 
-
-/*=============== TESTIMONIAL SWIPER ===============*/
-let swiperTestimonial = new Swiper('.testimonial__swiper', {
-    loop: true,
-    spaceBetween: 16,
-    grabCursor: true,
-    slidesPerView: 'auto',
-    centeredSlides: 'auto',
-
-    breakpoints: {
-        1150: {
-            slidesPerView: 3,
-            centeredSlides: false,
-        }
-    }
-})
+sr.reveal(`.home__data, .featured__container, .new__container, .join__data, .testimonial__container,.footer`);
+sr.reveal(`.home__images`, {delay: 600})
+sr.reveal(`.services__card`, {interval: 100})
+sr.reveal(`.discount__data`, {origin: 'left'})
+sr.reveal(`.discount__images`, {origin: 'right'});

@@ -5,14 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!--=============== FAVICON ===============-->
     <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+    
     <!--=============== REMIXICONS ===============-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
 
     <!--=============== SWIPER CSS ===============-->
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="assets/css/styles.css">
+
     <title>Book Website</title>
 </head>
 
@@ -103,11 +107,11 @@
         <i class="ri-close-line login__close" id="login-close"></i>
 
     </div>
-    <!-- main-->
+    <!--==================== Main ====================-->
     <main class="main">
         <section class="home section" id="home">
             <div class="home__container conatiner grid">
-                <div class="home_data">
+                <div class="home__data">
                     <h1 class="home__title">
                         Browse & <br>
                         Select E-Books
@@ -165,11 +169,9 @@
 
         <!--==================== FEATURED ====================-->
         <section class="featured section" id="featured">
-            <center>
                 <h2 class="section__title">
                     featured Books
                 </h2>
-            </center>
             <div class="featured__container container">
                 <div class="featured__swiper swiper">
                     <div class="swiper-wrapper">
@@ -194,6 +196,7 @@
                             </div>
 
                         </article>
+
                         <article class="featured__card swiper-slide">
                             <img src="assets/img/book-2.png" alt="image" class="featured__img">
                             <h2 class="featured__tittle">Featured Books</h2>
@@ -382,6 +385,12 @@
 
                         </article>
                     </div>
+                    <div class="swiper-button-prev">
+                        <i class="ri-arrow-left-s-line"></i>
+                    </div>
+                    <div class="swiper-button-next">
+                        <i class="ri-arrow-right-s-line"></i>
+                    </div>
                 </div>
             </div>
 
@@ -412,12 +421,12 @@
         </section>
 
        <!--==================== NEW BOOKS ====================-->
-    <section class="new section" id="" new>
+    <section class="new section" id="new" new>
         <h2 class="section__title">
             New Books
         </h2>
         <div class="new__container container">
-            <div class="new__swiper swiper-container">
+            <div class="new__swiper swiper">
                 <div class="swiper-wrapper">
                     <a href="#" class="new__card swiper-slide">
                         <img src="assets/img/book-1.png" alt="image" class="new__img">
@@ -962,22 +971,22 @@
                 </div>
             </div>
         </div>
-        <span class="footer__copy">
-            &#169; All Rights Reserved By Bedimcode
-        </span>
     </footer> -->
 
     <!--========== SCROLL UP ==========-->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="ri-arrow-up-line"></i>
+    </a>
 
 
     <!--=============== SCROLLREVEAL ===============-->
-    <script src=""></script>
+    <script src="assets/js/scrollreveal.min.js"></script>
 
 
-
-
+     <!--=============== Swiper JS ===============-->
     <script src="assets/js/swiper-bundle.min.js"></script>
 
+     <!--=============== Main JS ===============-->
     <script src="assets/js/main.js"></script>
 </body>
 
