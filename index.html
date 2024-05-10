@@ -26,6 +26,7 @@
             <a href="#" class=" nav__logo">
                 <i class="ri-book-3-line"></i> E-Book
             </a>
+            <h3 id = "showname"></h3>
             <div class="nav_menu">
                 <ul class="nav__list">
                     <li class="nav__item">
@@ -79,40 +80,78 @@
         <i class="ri-close-line search__close" id="search-close"></i>
     </div>
     <!--==================== LOGIN ====================-->
-    <div class="login grid" id="login-content">
-        <form action="" class="login__form grid">
+    <!-- <div class="login grid" id="login-content">
+        <form action="" class="login__form grid" id="submit_login_form">
             <h3 class="login__title">Log In</h3>
             <div class="login__group grid">
+                <!-- <div>
+                    <label for="login-user" class="login__label">User</label>
+                    <input type="text" placeholder="Enter your name" id="full_name" class="login__input">
+                </div> 
                 <div>
                     <label for="login-email" class="login__label">Email</label>
-                    <input type="email" placeholder="Write your email" id="login-email" class="login__input">
+                    <input type="email" placeholder="Write your email" id="email" class="login__input">
                 </div>
                 <div>
                     <label for="login-pass" class="login__label">Password</label>
-                    <input type="password" placeholder="Enter your password" id="login-pass" class="login__input">
+                    <input type="password" placeholder="Enter your password" id="password" class="login__input">
                 </div>
             </div>
             <div>
                 <span class="login__signup">
-                    You do not have an account? <a href="#">Sign up</a>
+                    You do not have an account? <a href="signup.html" id="sign-button">Sign up</a>
                 </span>
-                <a href="#" class="login__forgot">
-                    You forgot your password
-                </a>
-                <button type="submit" class="login__button button">
+                <button onclick="login()" class="login__button button">
                     Log In
                 </button>
+                <!-- <button onclick="register()" class="sign__button button">
+                    Sign Up
+                </button> 
             </div>
         </form>
         <i class="ri-close-line login__close" id="login-close"></i>
 
-    </div>
+    </div> -->
+
+
+    <!-- ====================signup==========-->
+    <div class="sign grid" id="sign-content">
+        <form action="login.html" class="sign__form grid" id="submit_signup_form">
+            <h3 class="sign__title">Sign uP</h3>
+            <div class="sign__group grid">
+                <div>
+                    <label for="sign-user" class="sign__label">User</label>
+                    <input type="text" placeholder="Enter your name" id="username" class="sign__input">
+                </div>
+                <div>
+                    <label for="sign-email" class="sign__label">Email</label>
+                    <input type="email" placeholder="Write your email" id="useremail" class="sign__input">
+                </div>
+                <div>
+                    <label for="sign-pass" class="sign__label">Password</label>
+                    <input type="password" placeholder="Enter your password" id="userpassword" class="sign__input">
+                </div>
+            </div>
+            <div>
+                <button onclick="signup()" class="sign__button button">
+                    Sign Up
+                </button>
+            </div>
+        </form>
+        <i class="ri-close-line sign__close" id="sign-close"></i>
+
+    </div> 
+
     <!--==================== Main ====================-->
+   
     <main class="main">
+    
         <section class="home section" id="home">
             <div class="home__container conatiner grid">
                 <div class="home__data">
+                    
                     <h1 class="home__title">
+                        
                         Browse & <br>
                         Select E-Books
                     </h1>
@@ -166,6 +205,7 @@
                 </article>
             </div>
         </section>
+
 
         <!--==================== FEATURED ====================-->
         <section class="featured section" id="featured">

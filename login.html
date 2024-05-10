@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <!--=============== REMIXICONS ===============-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
+
+    <!--=============== SWIPER CSS ===============-->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <title>Book Website</title>
+</head>
+
+<body>
+
+
+    <div class="login grid" id="login-content">
+        <form action="index.html" class="login__form grid" id="submit_login_form">
+            <h3 class="login__title">Log In</h3>
+            <div class="login__group grid">
+                <!-- <div>
+                    <label for="login-user" class="login__label">User</label>
+                    <input type="text" placeholder="Enter your name" id="full_name" class="login__input">
+                </div> -->
+                <div>
+                    <label for="login-email" class="login__label">Email</label>
+                    <input type="email" placeholder="Write your email" id="email" class="login__input">
+                </div>
+                <div>
+                    <label for="login-pass" class="login__label">Password</label>
+                    <input type="password" placeholder="Enter your password" id="password" class="login__input">
+                </div>
+            </div>
+            <div>
+                <!-- <span class="login__signup">
+                    You do not have an account? <a href="sign-content" id="sign-button">Sign up</a>
+                </span> -->
+                <button onclick="login()" class="login__button button">
+                    Log In
+                </button>
+                <!-- <button onclick="register()" class="sign__button button">
+                    Sign Up
+                </button> -->
+            </div>
+        </form>
+        <i class="ri-close-line login__close" id="login-close"></i>
+
+    </div>
+
+
+
+    <script src="assets/js/scrollreveal.min.js"></script>
+
+    <!--=============== Swiper JS ===============-->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
