@@ -75,7 +75,8 @@
     <div class="search" id="search-content">
         <form action="" class="search__form">
             <i class="ri-search-line search__icon"></i>
-            <input type="search" placeholder="What are you looking for?" class="search__input">
+            <input type="search" placeholder="What are you looking for?"
+             class="search__input" onkeyup="search()" id ="search-item">
         </form>
         <i class="ri-close-line search__close" id="search-close"></i>
     </div>
@@ -161,7 +162,7 @@
                         possible categories, take advantage of the
                         50% discount and much more.
                     </p>
-                    <a href="#" class="button">Explore Now</a>
+                    <a href="#new" class="button">Explore Now</a>
                 </div>
                 <div class="home__images">
                     <div class="home__swiper swiper">
@@ -213,7 +214,7 @@
                 featured Books
             </h2>
             <div class="featured__container container">
-                <div class="featured__swiper swiper">
+                <div class="featured__swiper swiper" id ="book-list">
                     <div class="swiper-wrapper">
                         <article class="featured__card swiper-slide">
                             <img src="assets/img/book-1.png" alt="image" class="featured__img">
@@ -239,7 +240,7 @@
 
                         <article class="featured__card swiper-slide">
                             <img src="assets/img/book-2.png" alt="image" class="featured__img">
-                            <h2 class="featured__tittle">Featured Books</h2>
+                            <h2 class="featured__tittle">Comic Books</h2>
                             <div class="featured__prices">
                                 <span class="featured__discount">$11.99</span>
                                 <span class="featured__price">$19.99</span>
