@@ -123,15 +123,15 @@ s="The Giver  $11.19";
     cartButton1.addEventListener('click',() =>{
         cartContent.classList.add('show-cart');
        
-        addBookToArray("The Lord Of The King $11.99");
+        addBookToArray("The Lord Of The King  $16.99");
     })
     cartButton3.addEventListener('click',() =>{
         cartContent.classList.add('show-cart');
-        addBookToArray("Simple&Minimalist $11.99");
+        addBookToArray("Simple&Minimalist $14.99");
     })
     cartButton2.addEventListener('click',() =>{
         cartContent.classList.add('show-cart');
-        addBookToArray("Muted Poster $11.99");
+        addBookToArray("Muted Poster $10.99");
     })
     cartButton4.addEventListener('click',() =>{
         cartContent.classList.add('show-cart');
@@ -143,7 +143,7 @@ s="The Giver  $11.19";
     })
     cartButton6.addEventListener('click',() =>{
         cartContent.classList.add('show-cart');
-        addBookToArray("Designed For Work $11.99");
+        addBookToArray("Designed For Work $19.99");
     })
     cartButton7.addEventListener('click',() =>{
         cartContent.classList.add('show-cart');
