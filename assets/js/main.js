@@ -109,6 +109,7 @@ let swiperNew = new Swiper('.new__swiper', {
 })
 
 /*=============== TESTIMONIAL SWIPER ===============*/
+
 let swiperTestimonial = new Swiper('.testimonial__swiper', {
     loop: true,
     spaceBetween: 16,
