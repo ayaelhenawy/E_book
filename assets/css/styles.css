@@ -559,9 +559,85 @@ font-weight: 500;
     color: var(--first-color);
     transition: border .4s background-color .4s;
 }
+/*=============== Button ===============*/
+.button{
+  display: inline-block;
+  background-color: var(--first-color);
+  color: var(--white-color);
+  font-weight: var(--font-semi-bold);
+  padding: 1rem 1.5rem;
+  transition: box-shadow .4s;
+}
+
+.button:hover{
+  box-shadow: 0 4px 32px hsla(230, 72%, 32%,.4);
+
+}
+
+/*=============== cart ===============*/
+.cart{
+  position: fixed;
+  top: -100%;
+  left: 1000;
+  width: 500px;
+  height: auto;
+  margin-left: 450px;
+  z-index: var(--z-fixed);
+  background-color: hsla(230, 12%, 96%, .6);
+  backdrop-filter: blur(16px);
+  align-items: center;
+  padding: 1.5rem;
+  text-align: center;
+  transition: top .4s;
+}
+.cart__form{
+  background-color: var(--container-color);
+  padding: 2rem 1.5rem;
+  border: 2px solid var(--border-color);
+  row-gap: 1.25rem;
+}
+
+.cart__title{
+  font-size: var(--h2-font-size);
+  padding: 20px;
+}
+
+.cart__group{
+  row-gap: 1.25rem;
+}
+.cart__label{
+  display : block;
+  text-align: initial;
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+  margin-bottom: .25rem;
+}
 
 
 
+.cart__button{
+  width: 200px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.cart__close{
+  position: absolute;
+  top: 2rem;
+  right:2rem;
+  font-size: 2rem;
+  color: var(--title-color);
+  cursor: pointer;
+}
+.show-cart{
+  top:0;
+}
+
+/* add shadow header*/
+.shadow-header{
+  box-shadow: 0 2px 16px hsla(0, 0%, 0%, .1);
+
+}
 /*=============== DISCOUNT ===============*/
 .discount__container {
   row-gap: 3.5rem;
