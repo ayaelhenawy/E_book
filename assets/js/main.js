@@ -1,19 +1,19 @@
 /*=============== SEARCH ===============*/
 const searchButton = document.getElementById('search-button'),
-      searchClose = document.getElementById('search-close'),
-      searchContent = document.getElementById('search-content')
+    searchClose = document.getElementById('search-close'),
+    searchContent = document.getElementById('search-content')
 
 /*=============== Search Show ===============*/
 
-if(searchButton){
-    searchButton.addEventListener('click',() =>{
+if (searchButton) {
+    searchButton.addEventListener('click', () => {
         searchContent.classList.add('show-search')
     })
 }
 /*=============== Search Hidden ===============*/
 
-if(searchClose){
-    searchClose.addEventListener('click', () =>{
+if (searchClose) {
+    searchClose.addEventListener('click', () => {
         searchContent.classList.remove('show-search')
 
     })
@@ -22,20 +22,20 @@ if(searchClose){
 /*=============== Sign up ===============*/
 
 const loginButton = document.getElementById('login-button'),
-      signClose = document.getElementById('sign-close'),
-      signContent = document.getElementById('sign-content')
+    signClose = document.getElementById('sign-close'),
+    signContent = document.getElementById('sign-content')
 
 /*=============== sign up Show ===============*/
 
-if(loginButton){
-    loginButton.addEventListener('click',() =>{
+if (loginButton) {
+    loginButton.addEventListener('click', () => {
         signContent.classList.add('show-sign')
     })
 }
 /*=============== sign up  Hidden ===============*/
 
-if(signClose){
-    signClose.addEventListener('click', () =>{
+if (signClose) {
+    signClose.addEventListener('click', () => {
         signContent.classList.remove('show-sign')
 
     })
@@ -43,12 +43,12 @@ if(signClose){
 /*================login=================*/
 
 const loginClose = document.getElementById('login-close'),
-      loginContent = document.getElementById('login-content')
+    loginContent = document.getElementById('login-content')
 
 
 
-if(loginClose){
-    loginClose.addEventListener('click', () =>{
+if (loginClose) {
+    loginClose.addEventListener('click', () => {
         loginContent.classList.remove('show-login')
 
     })
@@ -56,95 +56,95 @@ if(loginClose){
 
 
 
-    //localstorage sign up
+//localstorage sign up
 
-    let signupName = document.getElementById('username');
-    let signupEmail = document.getElementById('useremail');
-    let signupPass = document.getElementById('userpassword');
+let signupName = document.getElementById('username');
+let signupEmail = document.getElementById('useremail');
+let signupPass = document.getElementById('userpassword');
 
-    function signup(){
-        if(signupName.value !=='' && signupEmail.value !== '' && signupPass.value !== ''){
-            localStorage.setItem('name' , signupName.value);
-            localStorage.setItem('email' , signupEmail.value);
-            localStorage.setItem('password' , signupPass.value);
+function signup() {
+    if (signupName.value !== '' && signupEmail.value !== '' && signupPass.value !== '') {
+        localStorage.setItem('name', signupName.value);
+        localStorage.setItem('email', signupEmail.value);
+        localStorage.setItem('password', signupPass.value);
 
-            //window.location.href = "login.html" ;
-        }
-        else{
-            alert("Please Fill out all fields")
-        }
-
+        //window.location.href = "login.html" ;
+    }
+    else {
+        alert("Please Fill out all fields")
     }
 
-    // localstorage login 
+}
 
-    let loginEmail = document.getElementById('email');
-    let loginPass = document.getElementById('password');
+// localstorage login 
 
-    function login(){
-        let storeMail = localStorage.getItem('email');
-        let storePass = localStorage.getItem('password');
+let loginEmail = document.getElementById('email');
+let loginPass = document.getElementById('password');
 
-        if(loginEmail.value == storeMail && loginPass.value == storePass){
-            alert("Welcome");
+function login() {
+    let storeMail = localStorage.getItem('email');
+    let storePass = localStorage.getItem('password');
 
-            //window.location.href = "index.html";
-        }
-        else{
-            alert("Please Enter Valid Email/Password")
-        }
+    if (loginEmail.value == storeMail && loginPass.value == storePass) {
+        alert("Welcome");
+
+        //window.location.href = "index.html";
     }
-    
-    //show user 
+    else {
+        alert("Please Enter Valid Email/Password")
+    }
+}
 
-    let userNameStore = localStorage.getItem('name');
-    let User = document.getElementById('showname');
+//show user 
 
-    User.textContent = userNameStore;
+let userNameStore = localStorage.getItem('name');
+let User = document.getElementById('showname');
+
+User.textContent = userNameStore;
 
 
-    // search 
- const search = () =>{
+// search 
+const search = () => {
     const searchbox = document.getElementById('search-item').value.toUpperCae();
     const storeitems = document.getElementById('book-list')
     const product = document.querySelectorAll('.featured__card ')
     const pname = storeitems.getElementsByName('h2')
 
 
-    for(var i =0; i< pname.length; i++){
+    for (var i = 0; i < pname.length; i++) {
 
         let match = product[i].getElementsByTagName('h2')[0];
 
-        if(match){
+        if (match) {
             let textvalue = match.textContent || match.innerHTML
 
-            if(textvalue.toUpperCase().indexOf(searchbox) > -1){
+            if (textvalue.toUpperCase().indexOf(searchbox) > -1) {
                 product[i].style.display = "";
 
             }
-            else{
+            else {
                 product[i].style.display = "none";
 
             }
         }
     }
 
- } 
+}
 
 /*=============== ADD SHADOW HEADER ===============*/
-const shadowHeader = () =>{
-  const header = document.getElementById('header')
+const shadowHeader = () => {
+    const header = document.getElementById('header')
 
-  this.scrollY >= 50 ? header.classList.add('shadow-header')
-                     : header.classList.remove('shadow-header')
-                  
+    this.scrollY >= 50 ? header.classList.add('shadow-header')
+        : header.classList.remove('shadow-header')
+
 }
-window.addEventListener('scroll', shadowHeader) 
+window.addEventListener('scroll', shadowHeader)
 
 /*=============== HOME SWIPER = ==============*/
 let swiperHome = new Swiper('.home__swiper', {
     loop: true,
-    spaceBetween: -24, 
+    spaceBetween: -24,
     grabCursor: true,
     slidesPerView: 'auto',
     centeredSlides: 'auto',
@@ -154,102 +154,102 @@ let swiperHome = new Swiper('.home__swiper', {
         disableOnInteraction: false,
     },
     breakpoints: {
-      1220: {
-          spaceBetween: -32,
+        1220: {
+            spaceBetween: -32,
         }
     }
-  
-  })
 
-  /*=============== FEATURED WSIPER = ==============*/
-  let swiperFeatured = new Swiper('.featured__swiper', {
+})
+
+/*=============== FEATURED WSIPER = ==============*/
+let swiperFeatured = new Swiper('.featured__swiper', {
     loop: true,
     spaceBetween: 16,
     grabCursor: true,
     slidesPerView: 'auto',
     centeredSlides: 'auto',
 
-    navigation:{
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
     },
     breakpoints: {
-      1150: {
-         slidesPerView: 4,
-         centeredSlides: false
+        1150: {
+            slidesPerView: 4,
+            centeredSlides: false
         }
     }
 });
 //////////////////////////////////////////////////////////
 cartButton = document.getElementById('cart-button'),
- cartButton1 = document.getElementById('button1'),
- cartButton2 = document.getElementById('button2'),
- cartButton3 = document.getElementById('button3'),
- cartButton4 = document.getElementById('button4'),
- cartButton5 = document.getElementById('button5'),
- cartButton6 = document.getElementById('button6'),
- cartButton7 = document.getElementById('button7'),
- cartButton8 = document.getElementById('button8'),
- cartButton9 = document.getElementById('button9'),
- cartButton10 = document.getElementById('button10'),
- cartButton11=document.getElementById('button111'),
+    cartButton1 = document.getElementById('button1'),
+    cartButton2 = document.getElementById('button2'),
+    cartButton3 = document.getElementById('button3'),
+    cartButton4 = document.getElementById('button4'),
+    cartButton5 = document.getElementById('button5'),
+    cartButton6 = document.getElementById('button6'),
+    cartButton7 = document.getElementById('button7'),
+    cartButton8 = document.getElementById('button8'),
+    cartButton9 = document.getElementById('button9'),
+    cartButton10 = document.getElementById('button10'),
+    cartButton11 = document.getElementById('button111'),
 
-      cartClose = document.getElementById('cart-close'),
-      cartContent = document.getElementById('cart-content')
+    cartClose = document.getElementById('cart-close'),
+    cartContent = document.getElementById('cart-content')
 
 /*===============  ===============*/
 
-s="The Giver  $11.19";
+s = "The Giver  $11.19";
 
-    cartButton.addEventListener('click',() =>{
-        cartContent.classList.add('show-cart');
-        
-    })
-    cartButton1.addEventListener('click',() =>{
-        cartContent.classList.add('show-cart');
-       
-        addBookToArray("The Lord Of The King  $16.99");
-    })
-    cartButton3.addEventListener('click',() =>{
-        cartContent.classList.add('show-cart');
-        addBookToArray("Simple&Minimalist $14.99");
-    })
-    cartButton2.addEventListener('click',() =>{
-        cartContent.classList.add('show-cart');
-        addBookToArray("Muted Poster $10.99");
-    })
-    cartButton4.addEventListener('click',() =>{
-        cartContent.classList.add('show-cart');
-        addBookToArray("Pouring Dreams $11.99");
-    })
-    cartButton5.addEventListener('click',() =>{
-        cartContent.classList.add('show-cart');
-        addBookToArray("Customize Clothes $11.99");
-    })
-    cartButton6.addEventListener('click',() =>{
-        cartContent.classList.add('show-cart');
-        addBookToArray("Designed For Work $19.99");
-    })
-    cartButton7.addEventListener('click',() =>{
-        cartContent.classList.add('show-cart');
-        addBookToArray("Plant Tree $11.99");
-    })
-    cartButton8.addEventListener('click',() =>{
-        cartContent.classList.add('show-cart');
-        addBookToArray("Modern Poster $11.99");
+cartButton.addEventListener('click', () => {
+    cartContent.classList.add('show-cart');
 
-    })
-    cartButton9.addEventListener('click',() =>{
-        cartContent.classList.add('show-cart');
-        addBookToArray("Bird Park $11.99");
+})
+cartButton1.addEventListener('click', () => {
+    cartContent.classList.add('show-cart');
 
-    })
-    cartButton10.addEventListener('click',() =>{
-        cartContent.classList.add('show-cart');
-        addBookToArray("Memories of sword $11.99");
-        
-    })
-   
+    addBookToArray("The Lord Of The King  $16.99");
+})
+cartButton3.addEventListener('click', () => {
+    cartContent.classList.add('show-cart');
+    addBookToArray("Simple&Minimalist $14.99");
+})
+cartButton2.addEventListener('click', () => {
+    cartContent.classList.add('show-cart');
+    addBookToArray("Muted Poster $10.99");
+})
+cartButton4.addEventListener('click', () => {
+    cartContent.classList.add('show-cart');
+    addBookToArray("Pouring Dreams $11.99");
+})
+cartButton5.addEventListener('click', () => {
+    cartContent.classList.add('show-cart');
+    addBookToArray("Customize Clothes $11.99");
+})
+cartButton6.addEventListener('click', () => {
+    cartContent.classList.add('show-cart');
+    addBookToArray("Designed For Work $19.99");
+})
+cartButton7.addEventListener('click', () => {
+    cartContent.classList.add('show-cart');
+    addBookToArray("Plant Tree $11.99");
+})
+cartButton8.addEventListener('click', () => {
+    cartContent.classList.add('show-cart');
+    addBookToArray("Modern Poster $11.99");
+
+})
+cartButton9.addEventListener('click', () => {
+    cartContent.classList.add('show-cart');
+    addBookToArray("Bird Park $11.99");
+
+})
+cartButton10.addEventListener('click', () => {
+    cartContent.classList.add('show-cart');
+    addBookToArray("Memories of sword $11.99");
+
+})
+
 
 ////////////////////////////////////////////////////////////////////
 
@@ -261,14 +261,14 @@ let bookDiv = document.getElementById("bookkk");
 
 
 
-let  arrayOfBooks=[];
+let arrayOfBooks = [];
 
 // if there is books add in localstorage
-if(localStorage.getItem("bookkk")){
-    arrayOfBooks=JSON.parse(localStorage.getItem("bookkk"));
+if (localStorage.getItem("bookkk")) {
+    arrayOfBooks = JSON.parse(localStorage.getItem("bookkk"));
 }
 getDataFromLocalStorage();
- 
+
 
 
 
@@ -278,19 +278,19 @@ getDataFromLocalStorage();
 if (cartClose) {
     cartClose.addEventListener('click', () => {
         cartContent.classList.remove('show-cart');
-       
+
     });
 }
 /*=============== purchase ===============*/
 
-if(cartButton11){
-    cartButton11.addEventListener('click', () =>{
+if (cartButton11) {
+    cartButton11.addEventListener('click', () => {
         cartButton11.classList.remove('show-cart')
         window.location.href = 'https://app.fatora.io/register/?src=www.google.com&for=pg&lang=ar';
     })
 }
-if(cartClose){
-    cartClose.addEventListener('click', () =>{
+if (cartClose) {
+    cartClose.addEventListener('click', () => {
         cartContent.classList.remove('show-cart')
 
     })
@@ -298,31 +298,31 @@ if(cartClose){
 /*=============== adding and removing ===============*/
 
 
-  ///remove 
-bookDiv.addEventListener("click",(e)=>{
-    if(e.target.classList.contains("del")){
+///remove 
+bookDiv.addEventListener("click", (e) => {
+    if (e.target.classList.contains("del")) {
         deleteBookWith(e.target.parentElement.getAttribute("data-id"));
         e.target.parentElement.remove();
-        
+
     }
 }
 
 );
 
 
-function addBookToArray(textText){
-      const book ={
+function addBookToArray(textText) {
+    const book = {
         id: Date.now(),
         title: textText,
-      };
-      arrayOfBooks.push(book);
-      console.log(arrayOfBooks);
-      addElementToPageForm(arrayOfBooks);
- // add to local storage
- addDataTolocalStorage(arrayOfBooks);
- // for testing 
- console.log(arrayOfBooks);
- console.log(JSON.stringify(addBookToArray));
+    };
+    arrayOfBooks.push(book);
+    console.log(arrayOfBooks);
+    addElementToPageForm(arrayOfBooks);
+    // add to local storage
+    addDataTolocalStorage(arrayOfBooks);
+    // for testing 
+    console.log(arrayOfBooks);
+    console.log(JSON.stringify(addBookToArray));
 }
 
 /*=============== add book to page ===============*/
@@ -334,25 +334,25 @@ function addElementToPageForm(arrayOfBooks) {
     arrayOfBooks.forEach((book) => {
         let div = document.createElement("div");
         div.className = "bookk";
-         div.setAttribute("data-id",book.id)
-        div.style.border = "1px solid grey"; 
-        div.style.padding = "10px"; 
-        div.style.display = "flex"; 
+        div.setAttribute("data-id", book.id)
+        div.style.border = "1px solid grey";
+        div.style.padding = "10px";
+        div.style.display = "flex";
         let textSpan = document.createElement("span");
         textSpan.textContent = book.title;
-        textSpan.style.paddingTop="7px"
-        textSpan.style.flex = "1"; 
-        textSpan.style.fontWeight = "bold"; 
+        textSpan.style.paddingTop = "7px"
+        textSpan.style.flex = "1";
+        textSpan.style.fontWeight = "bold";
         //buton remove
         let button = document.createElement("button");
         button.textContent = "Remove";
-        button.className="del";
-        button.style.backgroundColor = "red"; 
-        button.style.color = "white"; 
+        button.className = "del";
+        button.style.backgroundColor = "red";
+        button.style.color = "white";
         button.style.fontWeight = "bold";
-        button.style.padding="10px";
+        button.style.padding = "10px";
 
-        
+
         // Append text and button to div
         div.appendChild(textSpan);
         div.appendChild(button);
@@ -369,18 +369,18 @@ function addElementToPageForm(arrayOfBooks) {
 }
 // add to local storage
 
-function addDataTolocalStorage(arrayOfBooks){
-    window.localStorage.setItem("bookkk", JSON.stringify(arrayOfBooks)); 
+function addDataTolocalStorage(arrayOfBooks) {
+    window.localStorage.setItem("bookkk", JSON.stringify(arrayOfBooks));
 }
-function getDataFromLocalStorage(){
+function getDataFromLocalStorage() {
     let data = window.localStorage.getItem("bookkk");
-    if(data){
-        let books=JSON.parse(data);
+    if (data) {
+        let books = JSON.parse(data);
         addElementToPageForm(books);
-       
+
     }
 }
-function deleteBookWith(bookid){
+function deleteBookWith(bookid) {
     arrayOfBooks = arrayOfBooks.filter((book) => book.id != bookid);
     addDataTolocalStorage(arrayOfBooks);
 }
@@ -418,37 +418,38 @@ let swiperTestimonial = new Swiper('.testimonial__swiper', {
 })
 
 /*=============== SHOW SCROLL UP ===============*/
-const scrollUp = ()=>{
+const scrollUp = () => {
     const scrollUp = document.getElementById('scroll-up')
     this.scrollY >= 350 ? scrollUp.classList.add('show-scroll')
-                 : scrollUp.classList.remove('show-scroll')
+        : scrollUp.classList.remove('show-scroll')
 }
 window.addEventListener('scroll', scrollUp)
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 const sections = document.querySelectorAll('section[id]')
 
-const scrollActive = () =>{
+const scrollActive = () => {
     const scrollDown = window.scrollY
 
-  sections.forEach(current =>{
-    const sectionHeight = current.offsetHeight,
-         sectionTop = current.offsetTop - 58,
-         sectionId = current.getAttribute('id'),
-         sectionClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
-        
-    if(scrollDown > sectionTop && scrollDown <= sectionTop+ sectionHeight){
-        sectionClass.classList.add('active-link')
-    }
-    else{
-        sectionClass.classList.remove('active-link')
-    }
+    sections.forEach(current => {
+        const sectionHeight = current.offsetHeight,
+            sectionTop = current.offsetTop - 58,
+            sectionId = current.getAttribute('id'),
+            sectionClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
 
-  })
+        if (scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight) {
+            sectionClass.classList.add('active-link')
+        }
+        else {
+            sectionClass.classList.remove('active-link')
+        }
+
+    })
 }
-window.addEventListener('scroll',scrollActive)
+window.addEventListener('scroll', scrollActive)
 
 /*=============== DARK LIGHT THEME ===============*/
+
 
 const themeButton = document.getElementById('theme-button')
 const darkTheme = 'dark-theme'
@@ -462,18 +463,15 @@ const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'ri-moo
 
 if (selectedTheme) {
     document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
-    themeButton.classList[selectedIcon === 'ri-moon-line' ? 'add' : 'remove'](iconTheme)
+    themeButton, classList.selectedIcon === 'ri-sun-line' ? 'add' : 'remove'(iconTheme)
 }
 
 themeButton.addEventListener('click', () => {
     document.body.classList.toggle(darkTheme)
     themeButton.classList.toggle(iconTheme)
-
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
-
- })
-
+})
 /*=============== SCROLL REVEAL ANIMATION ===============*/
 
 const sr = ScrollReveal({
@@ -484,11 +482,7 @@ const sr = ScrollReveal({
 });
 
 sr.reveal(`.home__data, .featured__container, .new__container, .join__data, .testimonial__container,.footer`);
-sr.reveal(`.home__images`, {delay: 600})
-sr.reveal(`.services__card`, {interval: 100})
-sr.reveal(`.discount__data`, {origin: 'left'})
-sr.reveal(`.discount__images`, {origin: 'right'});
-
-
-
-
+sr.reveal(`.home__images`, { delay: 600 })
+sr.reveal(`.services__card`, { interval: 100 })
+sr.reveal(`.discount__data`, { origin: 'left' })
+sr.reveal(`.discount__images`, { origin: 'right' });
