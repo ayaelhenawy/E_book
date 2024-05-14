@@ -706,6 +706,7 @@ button:hover {
 }*/
 
 /*=============== TESTIMONIAL ===============*/
+
 .testimonial__card{
   text-align: center;
   background-color: var(--container-color);
@@ -736,6 +737,7 @@ button:hover {
 
 
 /*=============== FOOTER ===============*/
+
 .footer{
   padding-block: 4rem 6rem;
 }
