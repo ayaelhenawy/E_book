@@ -19,20 +19,33 @@ if(searchClose){
     })
 }
 
-/*=============== LOGIN ===============*/
+/*=============== Sign up ===============*/
 
 const loginButton = document.getElementById('login-button'),
-      loginClose = document.getElementById('login-close'),
-      loginContent = document.getElementById('login-content')
+      signClose = document.getElementById('sign-close'),
+      signContent = document.getElementById('sign-content')
 
-/*=============== Login Show ===============*/
+/*=============== sign up Show ===============*/
 
 if(loginButton){
     loginButton.addEventListener('click',() =>{
-        loginContent.classList.add('show-login')
+        signContent.classList.add('show-sign')
     })
 }
-/*=============== Login  Hidden ===============*/
+/*=============== sign up  Hidden ===============*/
+
+if(signClose){
+    signClose.addEventListener('click', () =>{
+        signContent.classList.remove('show-sign')
+
+    })
+}
+/*================login=================*/
+
+const loginClose = document.getElementById('login-close'),
+      loginContent = document.getElementById('login-content')
+
+
 
 if(loginClose){
     loginClose.addEventListener('click', () =>{
@@ -43,8 +56,80 @@ if(loginClose){
 
 
 
+    //localstorage sign up
+
+    let signupName = document.getElementById('username');
+    let signupEmail = document.getElementById('useremail');
+    let signupPass = document.getElementById('userpassword');
+
+    function signup(){
+        if(signupName.value !=='' && signupEmail.value !== '' && signupPass.value !== ''){
+            localStorage.setItem('name' , signupName.value);
+            localStorage.setItem('email' , signupEmail.value);
+            localStorage.setItem('password' , signupPass.value);
+
+            //window.location.href = "login.html" ;
+        }
+        else{
+            alert("Please Fill out all fields")
+        }
+
+    }
+
+    // localstorage login 
+
+    let loginEmail = document.getElementById('email');
+    let loginPass = document.getElementById('password');
+
+    function login(){
+        let storeMail = localStorage.getItem('email');
+        let storePass = localStorage.getItem('password');
+
+        if(loginEmail.value == storeMail && loginPass.value == storePass){
+            alert("Welcome");
+
+            //window.location.href = "index.html";
+        }
+        else{
+            alert("Please Enter Valid Email/Password")
+        }
+    }
+    
+    //show user 
+
+    let userNameStore = localStorage.getItem('name');
+    let User = document.getElementById('showname');
+
+    User.textContent = userNameStore;
 
 
+    // search 
+ const search = () =>{
+    const searchbox = document.getElementById('search-item').value.toUpperCae();
+    const storeitems = document.getElementById('book-list')
+    const product = document.querySelectorAll('.featured__card ')
+    const pname = storeitems.getElementsByName('h2')
+
+
+    for(var i =0; i< pname.length; i++){
+
+        let match = product[i].getElementsByTagName('h2')[0];
+
+        if(match){
+            let textvalue = match.textContent || match.innerHTML
+
+            if(textvalue.toUpperCase().indexOf(searchbox) > -1){
+                product[i].style.display = "";
+
+            }
+            else{
+                product[i].style.display = "none";
+
+            }
+        }
+    }
+
+ } 
 
 /*=============== ADD SHADOW HEADER ===============*/
 const shadowHeader = () =>{
